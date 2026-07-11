@@ -13,20 +13,16 @@ void multiplication_table(void)
 	{
 		for (j = 1; j <= 4; j++)
 		{
-			printf("%d", i * j);
-			if (j < 4)
-			{
-				printf(" ");
-			}
+			printf("%d ", i * j);
 		}
 		printf("\n");
 	}
 }
 
 /**
- * main - Entry point of the program.
+ * main - Entry point.
  *
- * Return: Always 0 (Success).
+ * Return: Always 0.
  */
 int main(void)
 {
