@@ -1,24 +1,35 @@
 #include <stdio.h>
 
 /**
- * multiplication_table - Prints the multiplication table of 9.
- * @n: The number to multiply.
+ * multiplication_table - Prints a 4x4 multiplication table.
  *
  * Return: void
  */
-void multiplication_table(int n)
+void multiplication_table(void)
 {
-	int i;
+	int i, j;
 
-	for (i = 1; i <= 10; i++)
+	for (i = 1; i <= 4; i++)
 	{
-		printf("%d * %d = %d\n", n, i, n * i);
+		for (j = 1; j <= 4; j++)
+		{
+			printf("%d", i * j);
+			if (j < 4)
+			{
+				printf(" ");
+			}
+		}
+		printf("\n");
 	}
 }
 
-/* -- DO NOT Modify the code below this line -- */
+/**
+ * main - Entry point of the program.
+ *
+ * Return: Always 0 (Success).
+ */
 int main(void)
 {
-	multiplication_table(9);
+	multiplication_table();
 	return (0);
 }
