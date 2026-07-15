@@ -10,22 +10,22 @@ void print_rev(char *s)
 {
 	int len = 0;
 
-	/* الخطوة الأولى: حساب طول النص للوصول إلى نهايته */
+	/* Calculate the length of the string */
 	while (s[len] != '\0')
 	{
 		len++;
 	}
 
-	/* نرجع خطوة واحدة للخلف لنتجاهل الحرف الفراغي '\0' */
+	/* Move back one step to point to the last character */
 	len--;
 
-	/* الخطوة الثانية: الطباعة بالعكس حتى نصل إلى أول حرف */
+	/* Print characters in reverse order */
 	while (len >= 0)
 	{
 		_putchar(s[len]);
 		len--;
 	}
 
-	/* طباعة سطر جديد في النهاية */
+	/* Print a new line */
 	_putchar('\n');
 }
