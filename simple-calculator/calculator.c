@@ -4,12 +4,22 @@
  * add - adds two numbers
  * @a: first number
  * @b: second number
- *
- * Return: the sum of a and b
+ * Return: result
  */
 double add(double a, double b)
 {
     return (a + b);
+}
+
+/**
+ * sub - subtracts b from a
+ * @a: first number
+ * @b: second number
+ * Return: result
+ */
+double sub(double a, double b)
+{
+    return (a - b);
 }
 
 /**
@@ -24,12 +34,8 @@ int main(void)
 
     while (1)
     {
-        printf("Simple Calculator\n");
-        printf("1) Add\n");
-        printf("2) Subtract\n");
-        printf("3) Multiply\n");
-        printf("4) Divide\n");
-        printf("0) Quit\n");
+        /* Menu display */
+        printf("Simple Calculator\n1) Add\n2) Subtract\n3) Multiply\n4) Divide\n0) Quit\n");
         printf("Choice: ");
 
         if (scanf("%d", &choice) != 1)
@@ -44,16 +50,19 @@ int main(void)
         {
             printf("Invalid choice");
         }
-        else if (choice == 1)
+        else if (choice == 1 || choice == 2)
         {
             printf("A: ");
             scanf("%lf", &a);
             printf("B: ");
             scanf("%lf", &b);
-            printf("Result: %.0f\n", add(a, b)); 
-            /* Note: Use %.0f for integer-like results, or %.1f if you want decimals */
+            
+            if (choice == 1)
+                printf("Result: %.0f\n", add(a, b));
+            else
+                printf("Result: %.0f\n", sub(a, b));
         }
-        /* Add other choices (2, 3, 4) later */
+        /* Choices 3 and 4 will be handled later */
     }
     return (0);
 }
