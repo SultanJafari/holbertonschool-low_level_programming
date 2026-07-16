@@ -1,30 +1,31 @@
 #include <stdio.h>
 
 /**
- * add - adds two numbers
+ * add - returns the sum
  * @a: first number
  * @b: second number
- * Return: result
+ * Return: sum
  */
-double add(double a, double b)
-{
-    return (a + b);
-}
+double add(double a, double b) { return (a + b); }
 
 /**
- * sub - subtracts b from a
+ * sub - returns the difference
  * @a: first number
  * @b: second number
- * Return: result
+ * Return: difference
  */
-double sub(double a, double b)
-{
-    return (a - b);
-}
+double sub(double a, double b) { return (a - b); }
+
+/**
+ * mul - returns the product
+ * @a: first number
+ * @b: second number
+ * Return: product
+ */
+double mul(double a, double b) { return (a * b); }
 
 /**
  * main - entry point for the calculator
- *
  * Return: 0 on success
  */
 int main(void)
@@ -34,7 +35,6 @@ int main(void)
 
     while (1)
     {
-        /* Menu display */
         printf("Simple Calculator\n1) Add\n2) Subtract\n3) Multiply\n4) Divide\n0) Quit\n");
         printf("Choice: ");
 
@@ -50,19 +50,22 @@ int main(void)
         {
             printf("Invalid choice");
         }
-        else if (choice == 1 || choice == 2)
+        /* Handling choices 1, 2, and 3 together */
+        else if (choice >= 1 && choice <= 3)
         {
             printf("A: ");
             scanf("%lf", &a);
             printf("B: ");
             scanf("%lf", &b);
-            
+
             if (choice == 1)
                 printf("Result: %.0f\n", add(a, b));
-            else
+            else if (choice == 2)
                 printf("Result: %.0f\n", sub(a, b));
+            else
+                printf("Result: %.0f\n", mul(a, b));
         }
-        /* Choices 3 and 4 will be handled later */
+        /* Choice 4 (Division) will be handled separately due to the division-by-zero check */
     }
     return (0);
 }
