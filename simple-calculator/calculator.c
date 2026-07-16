@@ -1,6 +1,18 @@
 #include <stdio.h>
 
 /**
+ * add - adds two numbers
+ * @a: first number
+ * @b: second number
+ *
+ * Return: the sum of a and b
+ */
+double add(double a, double b)
+{
+    return (a + b);
+}
+
+/**
  * main - entry point for the calculator
  *
  * Return: 0 on success
@@ -8,23 +20,21 @@
 int main(void)
 {
     int choice;
+    double a, b;
 
     while (1)
     {
-        /* Display Menu */
         printf("Simple Calculator\n");
         printf("1) Add\n");
         printf("2) Subtract\n");
         printf("3) Multiply\n");
         printf("4) Divide\n");
-        printf("0) Quit\n"); /* Added \n for cleaner output */
+        printf("0) Quit\n");
         printf("Choice: ");
 
-        /* Read input */
         if (scanf("%d", &choice) != 1)
-            break; /* Non-numeric input handling (as per requirements) */
+            break;
 
-        /* Check for valid choices */
         if (choice == 0)
         {
             printf("Bye!\n");
@@ -33,15 +43,17 @@ int main(void)
         else if (choice < 0 || choice > 4)
         {
             printf("Invalid choice");
-            /* The prompt shows "Invalid choiceChoice: ..." 
-               so no newline here is intentional based on your requirement */
         }
-        else
+        else if (choice == 1)
         {
-            /* Placeholder for operations (Choice 1-4) */
-            /* You will call your functions here later */
+            printf("A: ");
+            scanf("%lf", &a);
+            printf("B: ");
+            scanf("%lf", &b);
+            printf("Result: %.0f\n", add(a, b)); 
+            /* Note: Use %.0f for integer-like results, or %.1f if you want decimals */
         }
+        /* Add other choices (2, 3, 4) later */
     }
-
     return (0);
 }
