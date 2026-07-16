@@ -2,15 +2,15 @@
 
 /**
  * leet - encodes a string into 1337.
- * @s: the string to encode.
+ * @s: the string to modify.
  *
- * Return: a pointer to the encoded string.
+ * Return: a pointer to the resulting string.
  */
 char *leet(char *s)
 {
 	int i, j;
 	char *letters = "aAeEtToOlL";
-	char *nums = "4433007711";
+	char *nums = "4433770011";
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
@@ -19,7 +19,6 @@ char *leet(char *s)
 			if (s[i] == letters[j])
 			{
 				s[i] = nums[j];
-				break;
 			}
 		}
 	}
