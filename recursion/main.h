@@ -1,10 +1,7 @@
-/**
- * _puts_recursion - prints a string, followed by a new line.
- * @s: The string to be printed.
- *
- * Return: Nothing.
- */
-void _puts_recursion(char *s)
-{
-    // Implementation details...
-}
+ifndef MAIN_H
+#define MAIN_H
+
+int _putchar(char c);
+void _puts_recursion(char *s);
+
+#endif /* MAIN_H */
