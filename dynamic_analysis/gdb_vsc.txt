@@ -1,7 +1,4 @@
-cd ~/holbertonschool-low_level_programming/dynamic_analysis
-
-cat > gdb_vsc.txt << 'EOF'
-0xF2EF340B
-0x449BC842
-0x65735AA6
-EOF
+0x6366889B
+0xA7C1C047
+0xA245
+0x9D24
