@@ -24,7 +24,8 @@ static node_t *node_create(session_t *s)
 
 int store_add(store_t *st, session_t *s)
 {
-	node_t *n, *cur;
+	node_t *n;
+	node_t *cur;
 
 	if (!st || !s || !s->id)
 		return 0;
@@ -34,6 +35,7 @@ int store_add(store_t *st, session_t *s)
 		if (cur->sess && cur->sess->id &&
 		    strcmp(cur->sess->id, s->id) == 0)
 			return 0;
+
 		cur = cur->next;
 	}
 
@@ -59,6 +61,7 @@ session_t *store_get(store_t *st, const char *id)
 		if (cur->sess && cur->sess->id &&
 		    strcmp(cur->sess->id, id) == 0)
 			return cur->sess;
+
 		cur = cur->next;
 	}
 
@@ -67,7 +70,8 @@ session_t *store_get(store_t *st, const char *id)
 
 int store_delete(store_t *st, const char *id, session_t **out)
 {
-	node_t *cur, *prev;
+	node_t *cur;
+	node_t *prev;
 
 	if (!st || !id)
 		return 0;
@@ -102,12 +106,14 @@ int store_delete(store_t *st, const char *id, session_t **out)
 
 void store_destroy(store_t *st)
 {
-	node_t *cur, *next;
+	node_t *cur;
+	node_t *next;
 
 	if (!st)
 		return;
 
 	cur = st->head;
+
 	while (cur) {
 		next = cur->next;
 		session_destroy(cur->sess);
