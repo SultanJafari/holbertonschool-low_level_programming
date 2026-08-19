@@ -18,10 +18,6 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (filename == NULL)
 		return (-1);
 
-	/* 
-	 * Open with O_WRONLY and O_APPEND. 
-	 * Notice we do NOT use O_CREAT because the file must already exist.
-	 */
 	fd = open(filename, O_WRONLY | O_APPEND);
 	if (fd == -1)
 		return (-1);
